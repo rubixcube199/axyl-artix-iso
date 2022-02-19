@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 non_root_user=artix # since makepkg doesn't run as root, we need a non root user for aur package building ( make sure the user has no password )
-init=dinit
+#init=dinit
 #init=openrc
-#init=runit
+init=runit
 #init=s6
 #init=suite66
 
