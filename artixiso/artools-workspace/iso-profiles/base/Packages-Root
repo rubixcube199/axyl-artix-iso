@@ -143,6 +143,7 @@ bmon
 inetutils
 firefox
 networkmanager
+broadcom-wl
 nethogs
 nm-connection-editor
 wget
