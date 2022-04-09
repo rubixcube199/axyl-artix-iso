@@ -1,1 +1,3 @@
 iso
+build/
+pacman-cache/
