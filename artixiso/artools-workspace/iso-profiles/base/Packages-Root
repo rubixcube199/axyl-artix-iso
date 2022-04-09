@@ -99,6 +99,7 @@ virtualbox-guest-utils
 #### Display manager ####
 #####################
 sddm
+sddm-runit
 
 ###############
 #### Other ####
