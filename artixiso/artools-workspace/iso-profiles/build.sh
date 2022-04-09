@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -e
 
 non_root_user=artix # since makepkg doesn't run as root, we need a non root user for aur package building ( make sure the user has no password )
 #init=dinit
@@ -8,7 +7,6 @@ init=runit
 #init=s6
 #init=suite66
 
-trap "" EXIT
 buildiso -i $init -p base -x
 
 artix-chroot /var/lib/artools/buildiso/base/artix/rootfs bash -c "pacman-key --init; pacman-key --populate artix;pacman-key --populate archlinux; pacman -Syy"
