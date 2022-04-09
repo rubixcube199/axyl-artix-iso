@@ -20,6 +20,10 @@ artix-archlinux-support
 alci-calamares
 alci-calamares-config
 
+#######################
+#### Axyl Packages ####
+#######################
+axyl-release
 axyl-wallpapers
 axyl-conkeww
 axyl-dmenu
@@ -30,6 +34,9 @@ axyl-artix-scripts
 axyl-skeleton
 axyl-vim
 
+#######################################################
+###                    EXTRAS                       ###
+#######################################################
 
 #################
 #### Theming ####
@@ -60,7 +67,7 @@ lxappearance
 maim
 picom
 sxhkd
-udiskie
+udisks2
 unzip
 xclip
 xfce4-power-manager
@@ -94,18 +101,23 @@ virtualbox-guest-utils
 alacritty
 archlinux-keyring
 base-devel
+bat
 cowfortune
-fish
+fzf
 gpick
 gtop
 htop
 libxinerama
 linux-headers
+lxdm-gtk3
 make
+oh-my-zsh-git
 polybar
 xdg-utils
 xdotool
 xfce4-terminal
+zsh-autosuggestions
+zsh-syntax-highlighting
 
 ##############
 #### Grub ####
@@ -143,7 +155,6 @@ bmon
 inetutils
 firefox
 networkmanager
-broadcom-wl
 nethogs
 nm-connection-editor
 wget
@@ -152,10 +163,9 @@ curl
 ###################
 #### Bluetooth ####
 ###################
-blueman
 bluez
 bluez-utils
-pulseaudio-bluetooth
+blueberry
 
 ###############
 #### Sound ####
@@ -163,11 +173,15 @@ pulseaudio-bluetooth
 alsa-plugins
 alsa-tools
 alsa-utils
+pamixer
 pavucontrol
 portaudio
-pulseaudio
-pulseaudio-alsa
-pulseaudio-equalizer-ladspa
+pipewire
+wireplumber
+pipewire-alsa
+pipewire-jack
+pipewire-zeroconf
+pipewire-pulse
 
 ###############
 #### Files ####
@@ -190,6 +204,9 @@ viewnior
 ####################
 ffmpeg
 ffmpegthumbnailer
+mpv
+youtube-dl
+yt-dlp
 
 ######################
 #### Text Editors ####
@@ -200,13 +217,15 @@ vim
 ######################
 #### AUR Packages ####
 ######################
+ani-cli-git
 cava
 devour
 i3lock-color
-j4-dmenu-desktop
 ksuperkey
 networkmanager-dmenu-git
 paru-bin
+phinger-cursors
 shell-color-scripts
 unimatrix-git
 xfce-polkit
+ytfzf-git
