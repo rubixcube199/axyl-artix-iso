@@ -95,6 +95,11 @@ nvidia-settings
 #####################
 virtualbox-guest-utils
 
+#####################
+#### Display manager ####
+#####################
+sddm
+
 ###############
 #### Other ####
 ###############
@@ -109,7 +114,6 @@ gtop
 htop
 libxinerama
 linux-headers
-lxdm-gtk3
 make
 oh-my-zsh-git
 polybar
