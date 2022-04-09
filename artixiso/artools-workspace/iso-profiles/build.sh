@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 
 non_root_user=artix # since makepkg doesn't run as root, we need a non root user for aur package building ( make sure the user has no password )
 #init=dinit
@@ -30,10 +31,10 @@ do
 done
 
 if [[ $(artix-chroot /var/lib/artools/buildiso/base/artix/rootfs pacman -Qtdq) != "" ]];then
-    artix-chroot /var/lib/artools/buildiso/base/artix/rootfs \ 
+    artix-chroot /var/lib/artools/buildiso/base/artix/rootfs \
 		yes | sudo pacman -Rns $(pacman -Qtdq)
     printf "\u001b[31mPACMAN:\033[0m Orphans found and removed, exiting script.\n"
-else 
+else
     printf "\u001b[31mPACMAN:\033[0m No orphans found, exiting script.\n"
 fi
 rm -rf /etc/aur_building
