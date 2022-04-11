@@ -24,7 +24,7 @@ jobs:
     steps:
       - name: Setup system
         run: |
-          pacman -Syu --noconfirm --needed artools iso-profiles artix-keyring artix-mirrorlist archlinux-keyring archlinux-mirrorlist
+          pacman -Syu --noconfirm --needed artools iso-profiles artix-keyring artix-mirrorlist archlinux-keyring archlinux-mirrorlist kmod
           pacman-key --init
           pacman-key --populate
           modprobe loop
