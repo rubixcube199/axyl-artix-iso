@@ -22,14 +22,17 @@ jobs:
       options: --privileged
 
     steps:
+      - name: Update packages
+        run: |
+          pacman -Syu --noconfirm --needed artools iso-profiles artix-keyring artix-mirrorlist archlinux-keyring archlinux-mirrorlist
+          pacman-key --init
+          pacman-key --populate
+        
       - name: Cache pacman packages
         uses: actions/cache@v3
         with:
           path: /var/cache/pacman/pkg/
           key: artix-packages
-
-      - name: Update packages
-        run: pacman -Syu --noconfirm --needed artools iso-profiles artix-keyring artix-mirrorlist archlinux-keyring archlinux-mirrorlist
 
       - uses: actions/checkout@v3
 
