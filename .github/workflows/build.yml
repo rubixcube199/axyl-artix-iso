@@ -30,6 +30,12 @@ jobs:
           ln -sf "$(pwd)/artixiso/artools-workspace" ~/
           ln -sf "$(pwd)/config/artools" ~/.config/
 
+      - name: Cache pacman packages
+        uses: actions/cache@v3
+        with:
+          path: /var/cache/pacman/pkg/
+          key: artix-packages
+
       - name: Build ISO
         working-directory: ./artixiso/artools-workspace/iso-profiles/
         run: ./build.sh
