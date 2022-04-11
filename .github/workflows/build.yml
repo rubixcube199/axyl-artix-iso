@@ -23,7 +23,7 @@ jobs:
           key: artix-packages
 
       - name: Update packages
-        run: pacman -Syu --noconfirm --needed artools iso-profiles archlinux-keyring archlinux-mirrorlist
+        run: pacman -Syu --noconfirm --needed artools iso-profiles archlinux-keyring artix-keyring artix-mirrorlist archlinux-mirrorlist
 
       - uses: actions/checkout@v3
 
