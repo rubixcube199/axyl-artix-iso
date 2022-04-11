@@ -22,6 +22,9 @@ jobs:
       options: --privileged
 
     steps:
+      - name: checks
+        run: |
+          uname -srm
       - name: Update packages
         run: |
           pacman -Syu --noconfirm --needed git squashfs-tools artools iso-profiles artix-keyring artix-mirrorlist archlinux-keyring archlinux-mirrorlist kmod
