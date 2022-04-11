@@ -22,10 +22,6 @@ jobs:
       options: --privileged
 
     steps:
-      - name: checks
-        run: |
-          cd /lib/
-          ls
       - name: Update packages
         run: |
           pacman -Syu --noconfirm --needed git squashfs-tools artools iso-profiles artix-keyring artix-mirrorlist archlinux-keyring archlinux-mirrorlist kmod
@@ -42,6 +38,11 @@ jobs:
 
       - name: Set current date as environment variable
         run: echo "DATE=`date +'%Y.%m.%d'`" >>$GITHUB_ENV
+        
+      - name: checks
+        run: |
+          tee /etc/modules-load.d/loop.conf <<< "loop"
+          modprobe loop
 
       - name: Setup symlinks for the build config
         run: |
