@@ -17,7 +17,7 @@ jobs:
 
     steps:
       - name: Update packages
-        run: pacman -Syu --noconfirm --needed artools iso-profiles archlinux-keyring archlinux-mirrorlist tar
+        run: pacman -Syu --noconfirm --needed artools iso-profiles archlinux-keyring archlinux-mirrorlist
 
       - uses: actions/checkout@v3
 
