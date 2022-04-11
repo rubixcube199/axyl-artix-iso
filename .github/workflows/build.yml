@@ -18,7 +18,7 @@ jobs:
     timeout-minutes: 60
 
     container:
-      image: angelofallaria/artix-base
+      image: angelofallaria/artix-runit
       options: --privileged
 
     steps:
@@ -41,8 +41,7 @@ jobs:
         
       - name: checks
         run: |
-          tee /etc/modules-load.d/loop.conf <<< "loop"
-          modprobe loop
+          lsmod | grep loop
 
       - name: Setup symlinks for the build config
         run: |
