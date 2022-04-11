@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: "0 16 * * *"
   workflow_dispatch:
+   inputs:
+     dev:
+        description: "Run as development?"
+        type: boolean
+        required: true
+        default: false
   push:
 
 jobs:
@@ -23,7 +29,7 @@ jobs:
           key: artix-packages
 
       - name: Update packages
-        run: pacman -Syu --noconfirm --needed artools iso-profiles archlinux-keyring artix-keyring artix-mirrorlist archlinux-mirrorlist
+        run: pacman -Syu --noconfirm --needed artools iso-profiles artix-keyring artix-mirrorlist archlinux-keyring archlinux-mirrorlist
 
       - uses: actions/checkout@v3
 
@@ -42,6 +48,18 @@ jobs:
 
       - name: Upload ISO artifact
         uses: actions/upload-artifact@v3
+        if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.dev == 'true' }}
         with:
-          name: axyl-artix-iso
+          name: axyl-artix-iso ${{ env.DATE }}
           path: /root/artools-workspace/iso/*
+          
+      - name: Create tag and release
+        uses: ncipollo/release-action@v1
+        if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && github.event.inputs.dev == 'false') }}
+        with:
+          name: axyl-artix-iso ${{ env.DATE }}
+          tag: ${{ env.DATE }}
+          commit: main
+          bodyFile: RELEASE.md
+          artifacts: "/root/artools-workspace/iso/*"
+          token: ${{ secrets.GITHUB_TOKEN }}
