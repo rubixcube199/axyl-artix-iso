@@ -45,6 +45,14 @@ jobs:
           ln -sf "$(pwd)/artixiso/artools-workspace" ~/
           ln -sf "$(pwd)/config/artools" ~/.config/
 
+      - name: Setup filesystem for the build
+        run: |
+          dd if=/dev/zero of=/tmp/loopfs2.img bs=1024 count=3000000
+          losetup /dev/loop0 /tmp/loopfs.img
+          mkfs.ext4 /dev/loop0
+          mkdir -p /var/lib/artools
+          mount /dev/loop0 /var/lib/artools
+
       - name: Build ISO
         working-directory: ./artixiso/artools-workspace/iso-profiles/
         run: ./build.sh
