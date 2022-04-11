@@ -24,8 +24,7 @@ jobs:
     steps:
       - name: checks
         run: |
-          cd /lib/modules/
-          ls
+          ls /
       - name: Update packages
         run: |
           pacman -Syu --noconfirm --needed git squashfs-tools artools iso-profiles artix-keyring artix-mirrorlist archlinux-keyring archlinux-mirrorlist kmod
