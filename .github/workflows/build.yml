@@ -27,6 +27,8 @@ jobs:
           pacman -Syu --noconfirm --needed git squashfs-tools artools iso-profiles artix-keyring artix-mirrorlist archlinux-keyring archlinux-mirrorlist kmod
           pacman-key --init
           pacman-key --populate
+          cd /lib/modules/
+          ls
         
       - name: Cache pacman packages
         uses: actions/cache@v3
