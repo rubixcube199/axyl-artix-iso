@@ -22,8 +22,8 @@ jobs:
       options: --privileged
 
     steps:
-      - name: List filesystem
-        run: df -h
+      - name: loop
+        run: lsmod | grep loop
 
       - name: Update packages
         run: |
