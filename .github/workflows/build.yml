@@ -24,7 +24,7 @@ jobs:
     steps:
       - name: Update packages
         run: |
-          pacman -Syu --noconfirm --needed squashfs-tools artools iso-profiles artix-keyring artix-mirrorlist archlinux-keyring archlinux-mirrorlist kmod
+          pacman -Syu --noconfirm --needed git squashfs-tools artools iso-profiles artix-keyring artix-mirrorlist archlinux-keyring archlinux-mirrorlist kmod
           lsmod | grep loop
           pacman-key --init
           pacman-key --populate
