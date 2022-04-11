@@ -18,7 +18,7 @@ jobs:
     timeout-minutes: 60
 
     container:
-      image: angelofallaria/artix-runit
+      image: angelofallaria/artix-base
       options: --privileged
 
     steps:
@@ -38,10 +38,6 @@ jobs:
 
       - name: Set current date as environment variable
         run: echo "DATE=`date +'%Y.%m.%d'`" >>$GITHUB_ENV
-        
-      - name: checks
-        run: |
-          lsmod | grep loop
 
       - name: Setup symlinks for the build config
         run: |
