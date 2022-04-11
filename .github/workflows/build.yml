@@ -41,6 +41,7 @@ jobs:
 
       - name: Setup symlinks for the build config
         run: |
+          modprobe loop
           mkdir ~/.config
           ln -sf "$(pwd)/artixiso/artools-workspace" ~/
           ln -sf "$(pwd)/config/artools" ~/.config/
