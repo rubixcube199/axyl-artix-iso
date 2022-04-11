@@ -22,12 +22,10 @@ jobs:
       options: --privileged
 
     steps:
-      - name: loop
-        run: lsmod | grep loop
-
       - name: Update packages
         run: |
-          pacman -Syu --noconfirm --needed squashfs-tools artools iso-profiles artix-keyring artix-mirrorlist archlinux-keyring archlinux-mirrorlist
+          pacman -Syu --noconfirm --needed squashfs-tools artools iso-profiles artix-keyring artix-mirrorlist archlinux-keyring archlinux-mirrorlist kmod
+          lsmod | grep loop
           pacman-key --init
           pacman-key --populate
         
