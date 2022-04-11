@@ -22,13 +22,12 @@ jobs:
       options: --privileged
 
     steps:
-      - name: Setup system
+      - name: Update packages
         run: |
           pacman -Syu --noconfirm --needed artools iso-profiles artix-keyring artix-mirrorlist archlinux-keyring archlinux-mirrorlist kmod
           pacman-key --init
           pacman-key --populate
-          modprobe loop
-
+        
       - name: Cache pacman packages
         uses: actions/cache@v3
         with:
