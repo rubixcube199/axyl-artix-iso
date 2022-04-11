@@ -17,7 +17,10 @@ jobs:
 
     steps:
       - name: Update packages
-        run: pacman -Syu --noconfirm --needed artools iso-profiles archlinux-keyring artix-keyring artix-mirrorlist archlinux-mirrorlist
+        run: |
+          pacman -Syu --noconfirm --needed artools iso-profiles archlinux-keyring artix-keyring artix-mirrorlist archlinux-mirrorlist
+          pacman-key --init
+          pacman-key --populate
 
       - name: Cache pacman packages
         uses: actions/cache@v3
