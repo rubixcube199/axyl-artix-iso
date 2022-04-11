@@ -39,4 +39,4 @@ rm -rf /etc/aur_building
 
 buildiso -i $init -p base -sc
 buildiso -i $init -p base -bc
-buildiso -i $init -p base -zc
+buildiso -i $init -p base -zc || exit 1
