@@ -1,0 +1,43 @@
+name: Build Axyl's Artix-based ISO
+
+on:
+  schedule:
+    - cron: "0 16 * * *"
+  workflow_dispatch:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    permissions:
+      contents: write
+
+    container:
+      image: angelofallaria/artix-base
+      options: --privileged
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set current date as environment variable
+        run: echo "DATE=`date +'%Y.%m.%d'`" >>$GITHUB_ENV
+
+      - name: Update packages and install archiso
+        run: pacman -Syu --noconfirm --needed artools iso-profiles archlinux-keyring archlinux-mirrorlist
+
+      - name: Setup symlinks for the build config
+        run: |
+          ln -sf "$(pwd)/artixiso/artools-workspace" ~/
+          ln -sf "$(pwd)/config/artools" ~/.config/
+
+      - name: Build ISO
+        working-directory: ./artools-workspace/iso-profiles/
+        run: ./build.sh
+
+      - name: Upload ISO artifact
+      - uses: actions/upload-artifact@v3
+        with:
+          name: axyl-artix-iso
+          path: /root/artools-workspace/iso/*
