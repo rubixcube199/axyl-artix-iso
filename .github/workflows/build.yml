@@ -31,7 +31,7 @@ jobs:
           ln -sf "$(pwd)/config/artools" ~/.config/
 
       - name: Build ISO
-        working-directory: ./artools-workspace/iso-profiles/
+        working-directory: ./artixiso/artools-workspace/iso-profiles/
         run: ./build.sh
 
       - name: Upload ISO artifact
