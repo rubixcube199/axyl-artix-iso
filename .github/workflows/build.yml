@@ -48,10 +48,10 @@ jobs:
       - name: Setup filesystem for the build
         run: |
           dd if=/dev/zero of=/tmp/loopfs.img bs=1024 count=3000000
-          losetup /dev/loop0 /tmp/loopfs.img
-          mkfs.ext4 /dev/loop0
+          losetup /dev/loop3 /tmp/loopfs.img
+          mkfs.ext4 /dev/loop3
           mkdir -p /var/lib/artools
-          mount /dev/loop0 /var/lib/artools
+          mount /dev/loop3 /var/lib/artools
 
       - name: Build ISO
         working-directory: ./artixiso/artools-workspace/iso-profiles/
