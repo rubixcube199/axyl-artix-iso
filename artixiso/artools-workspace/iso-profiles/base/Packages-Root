@@ -10,15 +10,12 @@ artix-live-@initsys@
 artix-archlinux-support
 
 #######################################################
-###                    ALCI                         ###
-#######################################################
-
-#######################################################
 ###  PACKAGES THAT ARE REMOVED AFTER INSTALLATION   ###
 ###             VIA CALAMARES CONFIG                ###
 #######################################################
-alci-calamares
-alci-calamares-config
+axyl-calamares
+axyl-calamares-config
+axyl-welcome
 
 #######################
 #### Axyl Packages ####
