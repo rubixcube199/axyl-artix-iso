@@ -24,8 +24,8 @@ _finalize_build() {
   echo "[*] Move Iso ${_iso} as ${_iso_name}-${_iso_version}-${_arch}.iso..."
   mkdir -p ${_iso}
   find ${_path} -type f -name "*.iso" -exec mv {} ${_iso}${_iso_name}-${_iso_version}-${_arch}.iso \;
-  
-  ## Change ownership 
+
+  ## Change ownership
   echo "+---------------------->>"
   echo "[*] Change ${_iso} ownership to '${_user}'..."
   chown -R ${_user}:${_group} ${_iso}
