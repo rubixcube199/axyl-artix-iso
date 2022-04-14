@@ -53,6 +53,11 @@ ttf-dejavu
 ttf-liberation
 nerd-fonts-jetbrains-mono
 
+#########################
+#### Display Manager ####
+#########################
+sddm-runit
+
 ###################
 #### Utilities ####
 ###################
