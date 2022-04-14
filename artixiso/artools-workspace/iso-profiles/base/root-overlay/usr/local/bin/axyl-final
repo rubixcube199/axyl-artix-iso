@@ -14,6 +14,19 @@ echo "Copy /etc/skel to /root"
 echo "#################################"
 cp -aT /etc/skel/ /root/
 
+echo "Delete other grub themes"
+echo "#################################"
+rm -rf /usr/share/grub/themes/artix /usr/share/grub/themes/starfield
+rm -rf /boot/grub/themes/artix /boot/grub/themes/starfield
+
+echo "Copy grub to /boot/grub/themes"
+echo "#################################"
+cp -rf /usr/share/grub/themes/axyl /boot/grub/themes
+
+echo "Update Grub configuration"
+echo "#################################"
+grub-mkconfig -o /boot/grub/grub.cfg
+
 echo "Cleanup original files"
 echo "#################################"
 rm -f /etc/sudoers.d/g_wheel
