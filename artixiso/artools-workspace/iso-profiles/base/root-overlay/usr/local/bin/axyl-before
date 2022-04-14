@@ -9,10 +9,6 @@ pacman-key --init
 pacman-key --populate artix
 pacman-key --populate archlinux
 
-echo "Copy grub to /boot/grub/themes"
-echo "#################################"
-cp -rf /usr/share/grub/themes/axyl /boot/grub/themes
-
 echo "#################################"
 echo "End axyl-before"
 echo "#################################"
