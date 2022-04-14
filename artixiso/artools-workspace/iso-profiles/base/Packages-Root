@@ -13,8 +13,8 @@ artix-archlinux-support
 ###  PACKAGES THAT ARE REMOVED AFTER INSTALLATION   ###
 ###             VIA CALAMARES CONFIG                ###
 #######################################################
-axyl-calamares
-axyl-calamares-config
+axyl-artix-calamares
+axyl-artix-calamares-config
 axyl-welcome
 
 #######################
