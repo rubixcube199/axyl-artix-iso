@@ -9,9 +9,9 @@ pacman-key --init
 pacman-key --populate artix
 pacman-key --populate archlinux
 
-echo "Remove Artix theme from grub"
+echo "Copy grub to /boot/grub/themes"
 echo "#################################"
-sed -i 's/\(GRUB_THEME.*\)/#\1/g' /etc/default/grub
+cp -rf /usr/share/grub/themes/axyl /boot/grub/themes
 
 echo "#################################"
 echo "End axyl-before"
