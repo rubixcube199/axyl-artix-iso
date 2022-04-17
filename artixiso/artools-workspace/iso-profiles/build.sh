@@ -43,7 +43,7 @@ _msg_info "Live environment pacman system update & populate keyrings"
 artix-chroot ${chroot_dir} bash -c "pacman-key --init; pacman-key --populate artix; pacman-key --populate archlinux; pacman -Syy"
 
 ## Run customize_chroot.sh
-if [[ -e $(pwd)/base/root-overlay/root/chroot.sh ]]; then
+if [[ -e $(pwd)/base/root-overlay/root/customize_chroot.sh ]]; then
   _msg_info "Running customize_chroot.sh in '${chroot_dir}' chroot"
   chmod +x "${chroot_dir}/root/customize_chroot.sh"
   artix-chroot "${chroot_dir}" "/root/customize_chroot.sh"
