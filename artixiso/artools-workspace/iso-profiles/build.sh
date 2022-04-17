@@ -32,23 +32,28 @@ set_color() {
 ## Show an INFO message
 _msg_info() {
     local _msg="${1}"
-    printf '%s[ARTIX-CHROOT] INFO:%s %s...%s\n' "${YELLOW}${BOLD}" "${RESET}" "${BOLD}${_msg}" "${RESET}"
+    printf '%s[ARTIX-CHROOT] INFO:%s %s\n' "${YELLOW}${BOLD}" "${RESET}" "${BOLD}${_msg}${RESET}"
+}
+
+## Customize installation.
+_make_customize_chroot() {
+    _msg_info "Running customize_chroot.sh in '${chroot_dir}' chroot..."
+    chmod +x "${chroot_dir}/root/customize_chroot.sh"
+    artix-chroot "${chroot_dir}" "/root/customize_chroot.sh"
+    rm -f "${chroot_dir}/root/customize_chroot.sh"
+    _msg_info "Done! customize_chroot.sh run successfully..."
 }
 
 set_color
 buildiso -i $init -p base -x
 
 ## Update System
-_msg_info "Live environment pacman system update & populate keyrings"
+_msg_info "Live environment pacman system update & populate keyrings..."
 artix-chroot ${chroot_dir} bash -c "pacman-key --init; pacman-key --populate artix; pacman-key --populate archlinux; pacman -Syy"
 
-## Run customize_chroot.sh
+## Check if `customize_chroot.sh` exists.
 if [[ -e $(pwd)/base/root-overlay/root/customize_chroot.sh ]]; then
-  _msg_info "Running customize_chroot.sh in '${chroot_dir}' chroot"
-  chmod +x "${chroot_dir}/root/customize_chroot.sh"
-  artix-chroot "${chroot_dir}" "/root/customize_chroot.sh"
-  rm -f "${chroot_dir}/root/customize_chroot.sh"
-  _msg_info "Done! customize_chroot.sh run successfully."
+    _make_customize_chroot
 fi
 
 buildiso -i $init -p base -sc
