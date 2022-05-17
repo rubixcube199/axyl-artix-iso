@@ -56,7 +56,8 @@ nerd-fonts-jetbrains-mono
 #########################
 #### Display Manager ####
 #########################
-sddm-runit
+sddm
+sddm-@initsys@
 
 ###################
 #### Utilities ####
@@ -97,12 +98,6 @@ nvidia-settings
 #### Virtual Box ####
 #####################
 virtualbox-guest-utils
-
-#####################
-#### Display manager ####
-#####################
-sddm
-sddm-runit
 
 ###############
 #### Other ####
