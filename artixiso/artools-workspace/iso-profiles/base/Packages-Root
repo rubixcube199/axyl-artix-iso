@@ -13,8 +13,8 @@ artix-archlinux-support
 ###  PACKAGES THAT ARE REMOVED AFTER INSTALLATION   ###
 ###             VIA CALAMARES CONFIG                ###
 #######################################################
-axyl-artix-calamares
-axyl-artix-calamares-config
+#axyl-artix-calamares
+#axyl-artix-calamares-config
 axyl-welcome
 
 #######################
@@ -114,7 +114,7 @@ htop
 libxinerama
 linux-headers
 make
-oh-my-zsh-git
+#oh-my-zsh-git
 polybar
 xdg-utils
 xdotool
@@ -168,7 +168,7 @@ curl
 ###################
 bluez
 bluez-utils
-blueberry
+#blueberry
 
 ###############
 #### Sound ####
