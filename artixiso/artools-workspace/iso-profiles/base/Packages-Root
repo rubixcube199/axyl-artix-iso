@@ -20,17 +20,17 @@ axyl-welcome
 #######################
 #### Axyl Packages ####
 #######################
-axyl-release
-axyl-wallpapers
-axyl-conkeww
-axyl-dmenu
-axyl-fonts
-axyl-grub-theme
-axyl-i3wm
-axyl-nvim
-axyl-artix-scripts
-axyl-skeleton
-axyl-vim
+#axyl-release
+#axyl-wallpapers
+#axyl-conkeww
+#axyl-dmenu
+#axyl-fonts
+#axyl-grub-theme
+#axyl-i3wm
+#axyl-nvim
+#axyl-artix-scripts
+#axyl-skeleton
+#axyl-vim
 
 #######################################################
 ###                    EXTRAS                       ###
@@ -90,7 +90,7 @@ xf86-video-vesa
 ########################
 #### Nvidia Drivers ####
 ########################
-nvidia
+#nvidia
 nvidia-utils
 nvidia-settings
 
@@ -220,9 +220,9 @@ vim
 ######################
 #### AUR Packages ####
 ######################
-ani-cli-git
+#ani-cli-git
 cava
-devour
+#devour
 i3lock-color
 ksuperkey
 networkmanager-dmenu-git
