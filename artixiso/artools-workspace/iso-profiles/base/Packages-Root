@@ -43,7 +43,7 @@ kvantum-qt5
 qt5ct
 adapta-gtk-theme
 qogir-gtk-theme
-kvantum-theme-qogir-git
+#kvantum-theme-qogir-git
 papirus-icon-theme
 
 ###############
@@ -51,7 +51,7 @@ papirus-icon-theme
 ###############
 ttf-dejavu
 ttf-liberation
-nerd-fonts-jetbrains-mono
+#nerd-fonts-jetbrains-mono
 
 #########################
 #### Display Manager ####
@@ -109,7 +109,7 @@ bat
 cowfortune
 fzf
 gpick
-gtop
+#gtop
 htop
 libxinerama
 linux-headers
@@ -136,7 +136,7 @@ xorg-fonts-misc
 xorg-server
 xorg-xbacklight
 xorg-xev
-xorg-xfd
+#xorg-xfd
 xorg-xkill
 xorg-xmodmap
 xorg-xrandr
@@ -208,7 +208,7 @@ viewnior
 ffmpeg
 ffmpegthumbnailer
 mpv
-youtube-dl
+#youtube-dl
 yt-dlp
 
 ######################
@@ -224,11 +224,11 @@ vim
 cava
 #devour
 i3lock-color
-ksuperkey
-networkmanager-dmenu-git
-paru-bin
+#ksuperkey
+#NetworkManager-dmenu-git
+#paru-bin
 phinger-cursors
-shell-color-scripts
-unimatrix-git
-xfce-polkit
+#shell-color-scripts
+#unimatrix-git
+#xfce-polkit
 ytfzf-git
